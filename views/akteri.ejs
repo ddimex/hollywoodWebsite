@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AKTERI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="bg2">
+      <div class="bg"></div>
+      <div class="content flexColumn">
+        <div class="header flexRow">
+          <a href="http://127.0.0.1:10000/">HOME</a>
+          <a href="http://127.0.0.1:10000/akteri" class="active"> ACTORS </a>
+          <a href="http://127.0.0.1:10000/filmovi">FILMS</a>
+        </div>
+
+        <div class="contentbg2">
+          <h1 class="text2"> actors </h1>
+
+          <ul>
+            <% akteri.forEach(akter => { %>
+            <li><%= akter.ime %> <%= akter.prezime %></li>
+            <% }); %>
+          </ul>
+
+          <div class="line"></div>
+
+          <form action="/akteri" method="post">
+            <input type="text" name="ime" id="ime" placeholder="First name" required />
+            <input type="text" name="prezime" id="prezime" placeholder="Last name" required />
+            <button type="submit"> add new actor </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

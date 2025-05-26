@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FILMOVI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg2">
+      <div class="bg"></div>
+      <div class="content flexColumn">
+        <div class="header flexRow">
+          <a href="http://127.0.0.1:10000/">HOME</a>
+          <a href="http://127.0.0.1:10000/akteri">ACTORS</a>
+          <a href="http://127.0.0.1:10000/filmovi" class="active">FILMS</a>
+        </div>
+
+        <div class="contentbg2">
+          <h1 class="text2">Films</h1>
+
+          <ul>
+            <% filmovi.forEach(film => { %>
+            <li><%= film %></li>
+            <% }); %>
+          </ul>
+
+          <div class="line"></div>
+
+          <form action="/filmovi" method="post">
+            <input type="text" name="film" id="film" placeholder="Film" required />
+            <button type="submit"> add new film </button>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
